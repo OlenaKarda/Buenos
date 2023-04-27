@@ -504,9 +504,8 @@ h6 {
 .what__items {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
-  grid-column-gap: 2em;
-  grid-row-gap: 2em;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .what__item {
@@ -1556,6 +1555,16 @@ button.swiper-pagination-bullet {
     margin-top: 4.375rem;
   }
 
+  .what__items {
+    -webkit-column-gap: 7.375rem;
+       -moz-column-gap: 7.375rem;
+            column-gap: 7.375rem;
+  }
+
+  .what__items {
+    row-gap: 6.3125rem;
+  }
+
   .reasons {
     padding-top: 4.125rem;
   }
@@ -1632,6 +1641,16 @@ button.swiper-pagination-bullet {
 
   .what__items {
     margin-top: 1.875rem;
+  }
+
+  .what__items {
+    -webkit-column-gap: 1.25rem;
+       -moz-column-gap: 1.25rem;
+            column-gap: 1.25rem;
+  }
+
+  .what__items {
+    row-gap: 1.25rem;
   }
 
   .reasons {
@@ -1810,6 +1829,11 @@ button.swiper-pagination-bullet {
     border-top: 1px solid #000;
   }
 
+  .what__items {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .reasons__item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1828,6 +1852,13 @@ button.swiper-pagination-bullet {
 @media (max-width: 47.99875em) and (any-hover: none) {
   .icon-menu {
     cursor: default;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .what__items {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -1889,6 +1920,34 @@ button.swiper-pagination-bullet {
 @supports not (margin-top: clamp( 1.875rem , 1.1159867173rem  +  3.7950664137vw , 4.375rem )) {
     .what__items {
       margin-top: calc(1.875rem + 2.5 * (100vw - 20rem) / 65.875);
+    }
+}
+
+@supports ((-moz-column-gap: clamp( 1.25rem , -0.6095825427rem  +  9.2979127135vw , 7.375rem )) or (column-gap: clamp( 1.25rem , -0.6095825427rem  +  9.2979127135vw , 7.375rem ))) {
+    .what__items {
+      -webkit-column-gap: clamp( 1.25rem , -0.6095825427rem  +  9.2979127135vw , 7.375rem );
+         -moz-column-gap: clamp( 1.25rem , -0.6095825427rem  +  9.2979127135vw , 7.375rem );
+              column-gap: clamp( 1.25rem , -0.6095825427rem  +  9.2979127135vw , 7.375rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 1.25rem , -0.6095825427rem  +  9.2979127135vw , 7.375rem )) or (column-gap: clamp( 1.25rem , -0.6095825427rem  +  9.2979127135vw , 7.375rem ))) {
+    .what__items {
+      -webkit-column-gap: calc(1.25rem + 6.125 * (100vw - 20rem) / 65.875);
+         -moz-column-gap: calc(1.25rem + 6.125 * (100vw - 20rem) / 65.875);
+              column-gap: calc(1.25rem + 6.125 * (100vw - 20rem) / 65.875);
+    }
+}
+
+@supports (row-gap: clamp( 1.25rem , -0.2870018975rem  +  7.6850094877vw , 6.3125rem )) {
+    .what__items {
+      row-gap: clamp( 1.25rem , -0.2870018975rem  +  7.6850094877vw , 6.3125rem );
+    }
+}
+
+@supports not (row-gap: clamp( 1.25rem , -0.2870018975rem  +  7.6850094877vw , 6.3125rem )) {
+    .what__items {
+      row-gap: calc(1.25rem + 5.0625 * (100vw - 20rem) / 65.875);
     }
 }
 
